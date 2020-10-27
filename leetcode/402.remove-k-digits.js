@@ -13,22 +13,22 @@ var removeKdigits = function (num, k) {
 
   /**
    * true if b is bigger or equal
-   * @param {string} a 
-   * @param {string} b 
+   * @param {string} a
+   * @param {string} b
    */
-  const compare = (a,b) => {
+  const compare = (a, b) => {
     let numA = a.replace(/^0+/, '')
     let numB = b.replace(/^0+/, '')
 
-    if(numA.length !== numB.length) {
+    if (numA.length !== numB.length) {
       return numB.length > numA.length
     }
 
-    for (let i = 0 ; i < a.length; i++) {
+    for (let i = 0; i < a.length; i++) {
       const digitA = +a[i]
       const digitB = +b[i]
 
-      if(digitA !== digitB) return digitB > digitA
+      if (digitA !== digitB) return digitB > digitA
     }
 
     // looks that are equal
@@ -60,7 +60,7 @@ var removeKdigits = function (num, k) {
 
   const result = recursion(num, k).replace(/^0+/, '')
 
-  if(result === '') return '0'
+  if (result === '') return '0'
 
   return result
 }
