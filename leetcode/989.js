@@ -8,7 +8,7 @@
 var addToArrayForm = function (A, K) {
   const KK = '' + K
 
-  if(A.length < KK.length) {
+  if (A.length < KK.length) {
     A.unshift(...Array(KK.length - A.length).fill(0))
   }
 
