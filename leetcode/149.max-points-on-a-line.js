@@ -1,6 +1,8 @@
 /**
  * https://leetcode.com/problems/max-points-on-a-line/
  *
+ * ! works but quickly gets too slow
+ *
  * @param {number[][]} points
  * @return {number}
  */
@@ -38,16 +40,22 @@ var maxPoints = function (points) {
     // const sameLine3 = (X2 * Y3 - X3 * Y2) / (X2 - X3)
 
     // const eq1 = sameLine1 === sameLine2
-    const eq1 =  (X1n * Y2n - X2n * Y1n) * (X1n - X3n) === (X1n * Y3n - X3n * Y1n) * (X1n - X2n)
-    if(!eq1) return false
+    const eq1 =
+      (X1n * Y2n - X2n * Y1n) * (X1n - X3n) ===
+      (X1n * Y3n - X3n * Y1n) * (X1n - X2n)
+    if (!eq1) return false
 
     // const eq2 = sameLine1 === sameLine3
-    const eq2 = (X1n * Y2n - X2n * Y1n) * (X2n - X3n) === (X2n * Y3n - X3n * Y2n) * (X1n - X2n) 
-    if(!eq2) return false
+    const eq2 =
+      (X1n * Y2n - X2n * Y1n) * (X2n - X3n) ===
+      (X2n * Y3n - X3n * Y2n) * (X1n - X2n)
+    if (!eq2) return false
 
     // const eq3 = sameLine2 === sameLine3
-    const eq3 = (X1n * Y3n - X3n * Y1n) *  (X2n - X3n) === (X2n * Y3n - X3n * Y2n) * (X1n - X3n) 
-    if(!eq3) return false
+    const eq3 =
+      (X1n * Y3n - X3n * Y1n) * (X2n - X3n) ===
+      (X2n * Y3n - X3n * Y2n) * (X1n - X3n)
+    if (!eq3) return false
 
     return true
   }
