@@ -5,7 +5,6 @@
  * @return {boolean}
  */
 var checkPossibility = function (nums) {
-  
   /**
    *
    * @param {number[]} arr
@@ -14,8 +13,8 @@ var checkPossibility = function (nums) {
    */
   const check = (arr, recursive = false) => {
     // just in case
-    if(nums.length < 2) return true
-    
+    if (nums.length < 2) return true
+
     for (let i = 0; i < arr.length - 1; i++) {
       const current = arr[i]
       const next = arr[i + 1]
@@ -28,8 +27,8 @@ var checkPossibility = function (nums) {
           const caseB = check(arrB)
 
           return caseA || caseB
-        } 
-        
+        }
+
         return false
       }
 
