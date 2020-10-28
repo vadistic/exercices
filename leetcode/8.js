@@ -6,7 +6,7 @@ var myAtoi = function (s) {
   const str = s.trimStart()
 
   /**
-   * @type {number}
+   * @type {number | undefined}
    */
   let sign
   let resultSrt = ''

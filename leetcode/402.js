@@ -53,6 +53,12 @@ var removeKdigits = function (num, k) {
     return leader
   }
 
+  /**
+   *
+   * @param {string} input
+   * @param {number} i
+   * @returns {string}
+   */
   const recursion = (input, i) => {
     if (i === 0) return input
     return recursion(removeDigit(input), i - 1)

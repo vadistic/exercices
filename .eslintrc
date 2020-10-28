@@ -1,15 +1,7 @@
 {
-  "parser": "@typescript-eslint/parser",
+  "extends": ["@vadistic/eslint-config", "@vadistic/eslint-config/prettier"],
 
-  "parserOptions": {
-    "ecmaVersion": 6
-  },
-
-  "env": {
-    "browser": true,
-    "node": true
-  },
-
-  "plugins": ["prettier"],
-  "extends": ["eslint:recommended", "prettier"]
+  "rules": {
+    "import/no-default-export": "off"
+  }
 }

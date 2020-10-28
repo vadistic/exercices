@@ -3,12 +3,17 @@
  *
  * ! works but quickly gets too slow
  *
- * @param {number[][]} points
+ * @param {[number,number][]} points
  * @return {number}
  */
 var maxPoints = function (points) {
   if (points.length < 3) return points.length
 
+  /**
+   *
+   * @param {[[number,number],[number,number]]} param0
+   * @param {[number,number]} param1
+   */
   const isPointOnLine = ([[X1, Y1], [X2, Y2]], [X3, Y3]) => {
     // handle vertical
     if (X1 === X2) {
@@ -60,12 +65,25 @@ var maxPoints = function (points) {
     return true
   }
 
+  /**
+   *
+   * @param {[number,number]} param0
+   * @param {[number,number]} param1
+   */
   const pointsEqual = ([X1, Y1], [X2, Y2]) => X1 === X2 && Y1 === Y2
 
+  /**
+   *
+   * @param {[[number,number],[number,number]]} line
+   * @param {[[number,number],[number,number]]} param1
+   */
   const linesEqual = (line, [point1, point2]) => {
     return isPointOnLine(line, point1) && isPointOnLine(line, point2)
   }
 
+  /**
+   * @type {[[number,number],[number,number]][]}
+   */
   const lines = []
   let max = 2
 
@@ -87,6 +105,9 @@ var maxPoints = function (points) {
       // point s are same or in the same place - do not form a line to calculate
       if (A === B || pointsEqual(A, B)) continue
 
+      /**
+       * @type {[[number,number],[number,number]]}
+       */
       const line = [A, B]
       let count = 2
       let fails = 0
