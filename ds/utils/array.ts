@@ -8,3 +8,5 @@ export const randomIntArray = (
   min?: number,
   max?: number,
 ): number[] => Array.from({ length }).map(() => randomInt(min, max))
+
+export const reverseArray = <T>(array: T[]): T[] => array.slice().reverse()

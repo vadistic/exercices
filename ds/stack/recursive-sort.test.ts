@@ -1,10 +1,12 @@
 import { randomIntArray } from '../utils/array'
 import { sortIntAsc } from '../utils/sort'
 
-import { recursivelySortStack } from './recursively-sort-stack'
+import { recursiveStackSort } from './recursive-sort'
 import { Stack } from './stack'
 
-describe('recurively sort stack', () => {
+describe('recurive sort stack', () => {
+  jest.setTimeout(500)
+
   const fixture: [string, number[]][] = [
     ['unsorted', [2, 8, 45, 7, 45, 3]],
     ['empty', []],
@@ -13,14 +15,11 @@ describe('recurively sort stack', () => {
     ['big', randomIntArray(1000)],
   ]
 
-  jest.setTimeout(500)
-
   test.each(fixture)('case %#: %s', (name, input) => {
     const stack = new Stack(input)
-    const result = recursivelySortStack(stack)
 
-    console.log(result.values)
+    recursiveStackSort(stack)
 
-    expect(result.values).toMatchObject(sortIntAsc(input))
+    expect(stack.values).toMatchObject(sortIntAsc(input))
   })
 })

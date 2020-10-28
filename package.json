@@ -9,7 +9,8 @@
   "private": true,
   "scripts": {
     "format": "prettier -w -l codility leetcode ds algo",
-    "lint": "eslint codility leetcode ds algo"
+    "lint": "eslint codility leetcode ds algo",
+    "test": "jest"
   },
   "devDependencies": {
     "@types/jest": "^26.0.15",

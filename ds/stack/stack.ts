@@ -1,5 +1,9 @@
 export class Stack {
-  constructor(readonly values: number[]) {}
+  values: number[]
+
+  constructor(input: number[]) {
+    this.values = input.slice()
+  }
 
   push(value: number) {
     return this.values.push(value)
