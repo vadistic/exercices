@@ -25,3 +25,5 @@ function solution(S) {
 
   return stackSize === 0 ? 1 : 0
 }
+
+export default solution
