@@ -1,10 +1,10 @@
 /* eslint-disable jest/no-commented-out-tests */
 /* eslint-disable jest/no-export */
-import solution from './solution'
+import solution from './solution2'
 
 export const naiveSolution = (n: number) => n
 
-describe('solution', () => {
+describe('solution2', () => {
   type Args = [number]
   type Result = number
 
