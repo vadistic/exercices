@@ -19,3 +19,5 @@ function solution(K, A) {
 
   return count
 }
+
+export default solution
